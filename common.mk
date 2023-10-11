@@ -11,6 +11,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from the proprietary version
 $(call inherit-product, vendor/xiaomi/sm8650-common/sm8650-common-vendor.mk)
 
+# Enable project quotas and casefolding for emulated storage without sdcardfs.
+$(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
+
 # Enable virtual A/B compression
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/vabc_features.mk)
 
