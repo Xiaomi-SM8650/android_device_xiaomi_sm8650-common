@@ -57,6 +57,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     fastbootd
 
+# Partitions
+PRODUCT_USE_DYNAMIC_PARTITIONS := true
+
 # Rootdir
 PRODUCT_PACKAGES += \
     fstab.qcom
