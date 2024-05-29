@@ -43,6 +43,9 @@ TARGET_BOOTLOADER_BOARD_NAME := pineapple
 TARGET_NO_BOOTLOADER := true
 TARGET_USES_UEFI := true
 
+# Filesystem
+TARGET_FS_CONFIG_GEN := $(COMMON_PATH)/configs/config.fs
+
 # Metadata
 BOARD_USES_METADATA_PARTITION := true
 
