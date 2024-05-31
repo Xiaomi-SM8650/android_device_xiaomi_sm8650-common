@@ -106,3 +106,14 @@ TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom
 TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
+
+# VINTF
+DEVICE_MANIFEST_SKUS := pineapple cliffs
+$(foreach sku, $(DEVICE_MANIFEST_SKUS), \
+    $(eval DEVICE_MANIFEST_$(call to-upper, $(sku))_FILES := \
+        $(COMMON_PATH)/configs/vintf/manifest_$(sku).xml \
+        )
+    
+DEVICE_MATRIX_FILE := hardware/qcom-caf/common/compatibility_matrix.xml
+
+DEVICE_FRAMEWORK_MANIFEST_FILE += $(COMMON_PATH)/configs/vintf/framework_manifest.xml
